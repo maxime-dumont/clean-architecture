@@ -1,4 +1,4 @@
-package org.example.interactors.ports;
+package org.example.interactors.usecase.api.ports.encoder;
 
 public interface PasswordEncoder {
 

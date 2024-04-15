@@ -1,7 +1,7 @@
 package org.example.adapters.sha256;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.example.interactors.ports.PasswordEncoder;
+import org.example.interactors.usecase.api.ports.encoder.PasswordEncoder;
 
 public class Sha256PasswordEncoder implements PasswordEncoder {
 	@Override

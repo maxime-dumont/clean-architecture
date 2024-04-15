@@ -1,17 +1,15 @@
-package org.example.interactors.request;
+package org.example.interactors.usecase.api.response.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserRequestModel {
+public class UserResponseModel {
 
     String login;
-    String password;
+    String creationTime;
 
 }

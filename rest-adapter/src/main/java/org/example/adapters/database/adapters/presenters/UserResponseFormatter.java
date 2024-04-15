@@ -1,7 +1,7 @@
 package org.example.adapters.database.adapters.presenters;
 
 import org.example.interactors.UserPresenter;
-import org.example.interactors.response.UserResponseModel;
+import org.example.interactors.usecase.api.response.model.UserResponseModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 

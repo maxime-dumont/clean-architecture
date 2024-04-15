@@ -1,24 +1,23 @@
-package org.example.interactors;
+package org.example.interactors.usecase;
 
 import lombok.AllArgsConstructor;
 import org.example.adapters.database.entities.User;
 import org.example.adapters.database.entities.UserFactory;
-import org.example.interactors.input.UserInputBoundary;
-import org.example.interactors.ports.UserRegisterDsGateway;
-import org.example.interactors.request.UserRequestModel;
-import org.example.interactors.response.UserResponseModel;
+import org.example.interactors.usecase.api.ports.data.model.UserDsRequestModel;
+import org.example.interactors.UserPresenter;
+import org.example.interactors.usecase.api.input.UserInputBoundary;
+import org.example.interactors.usecase.api.ports.data.UserRegisterDsGateway;
+import org.example.interactors.usecase.api.request.model.UserRequestModel;
+import org.example.interactors.usecase.api.response.model.UserResponseModel;
 
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
-public
-class UserRegisterInteractor implements UserInputBoundary {
+public class UserRegisterUsecase implements UserInputBoundary {
 
     final UserRegisterDsGateway userDsGateway;
     final UserPresenter userPresenter;
     final UserFactory userFactory;
-
-    // Constructor
 
     @Override
     public UserResponseModel create(UserRequestModel requestModel) {
