@@ -1,26 +1,26 @@
-package org.example.interactors.usecase;
+package org.example.interactors.usecase.user.register;
 
 import lombok.AllArgsConstructor;
-import org.example.adapters.database.entities.User;
-import org.example.adapters.database.entities.UserFactory;
-import org.example.interactors.usecase.api.ports.data.model.UserDsRequestModel;
-import org.example.interactors.UserPresenter;
-import org.example.interactors.usecase.api.input.UserInputBoundary;
-import org.example.interactors.usecase.api.ports.data.UserRegisterDsGateway;
-import org.example.interactors.usecase.api.request.model.UserRequestModel;
-import org.example.interactors.usecase.api.response.model.UserResponseModel;
+import org.example.domain.entities.User;
+import org.example.domain.entities.UserFactory;
+import org.example.interactors.usecase.user.register.api.ports.data.model.UserDsRequestModel;
+import org.example.interactors.usecase.user.register.api.input.UserPresenter;
+import org.example.interactors.usecase.user.register.api.input.UserRegisterInputBoundary;
+import org.example.interactors.usecase.user.register.api.ports.data.UserRegisterDsGateway;
+import org.example.interactors.usecase.user.register.api.request.model.UserRequestModel;
+import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
-public class UserRegisterUsecase implements UserInputBoundary {
+class UserRegisterUsecase implements UserRegisterInputBoundary {
 
     final UserRegisterDsGateway userDsGateway;
     final UserPresenter userPresenter;
     final UserFactory userFactory;
 
     @Override
-    public UserResponseModel create(UserRequestModel requestModel) {
+    public UserResponseModel register(UserRequestModel requestModel) {
         if (userDsGateway.existsByName(requestModel.getLogin())) {
             return userPresenter.prepareFailView("User already exists.");
         }

@@ -1,4 +1,4 @@
-package org.example.interactors.usecase.api.request.model;
+package org.example.interactors.usecase.user.register.api.request.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

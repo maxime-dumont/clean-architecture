@@ -1,4 +1,4 @@
-package org.example.adapters.database.entities;
+package org.example.domain.entities;
 
 public class CommonUserFactory implements UserFactory {
 

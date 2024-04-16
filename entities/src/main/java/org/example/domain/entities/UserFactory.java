@@ -1,4 +1,4 @@
-package org.example.adapters.database.entities;
+package org.example.domain.entities;
 
 /**
  * We created a user factory method because of two reasons.

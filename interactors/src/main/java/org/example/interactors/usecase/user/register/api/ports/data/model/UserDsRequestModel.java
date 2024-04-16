@@ -1,4 +1,4 @@
-package org.example.interactors.usecase.api.ports.data.model;
+package org.example.interactors.usecase.user.register.api.ports.data.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

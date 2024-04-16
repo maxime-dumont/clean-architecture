@@ -1,6 +1,6 @@
-package org.example.interactors;
+package org.example.interactors.usecase.user.register.api.input;
 
-import org.example.interactors.usecase.api.response.model.UserResponseModel;
+import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 
 public interface UserPresenter {
     UserResponseModel prepareSuccessView(UserResponseModel user);

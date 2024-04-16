@@ -2,8 +2,8 @@ package org.example.adapters.database;
 
 import lombok.RequiredArgsConstructor;
 import org.example.adapters.database.dbo.UserDbo;
-import org.example.interactors.usecase.api.ports.data.model.UserDsRequestModel;
-import org.example.interactors.usecase.api.ports.data.UserRegisterDsGateway;
+import org.example.interactors.usecase.user.register.api.ports.data.model.UserDsRequestModel;
+import org.example.interactors.usecase.user.register.api.ports.data.UserRegisterDsGateway;
 import org.example.adapters.database.repository.JpaUserRepository;
 
 @RequiredArgsConstructor
