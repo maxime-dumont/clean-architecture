@@ -3,21 +3,23 @@ package org.example.interactors.usecase.user.register;
 import lombok.AllArgsConstructor;
 import org.example.domain.entities.User;
 import org.example.domain.entities.UserFactory;
-import org.example.interactors.usecase.user.register.api.ports.data.model.UserDsRequestModel;
-import org.example.interactors.usecase.user.register.api.input.UserPresenter;
-import org.example.interactors.usecase.user.register.api.input.UserRegisterInputBoundary;
-import org.example.interactors.usecase.user.register.api.ports.data.UserRegisterDsGateway;
+import org.example.interactors.common.UseCase;
+import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserDsRequestModel;
+import org.example.interactors.usecase.user.register.api.ports.input.UserPresenter;
+import org.example.interactors.usecase.user.register.api.ports.input.UserRegisterInput;
+import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserRegisterDsOutput;
 import org.example.interactors.usecase.user.register.api.request.model.UserRequestModel;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 
 import java.time.LocalDateTime;
 
+@UseCase
 @AllArgsConstructor
-class UserRegisterUsecase implements UserRegisterInputBoundary {
+class UserRegisterUsecase implements UserRegisterInput {
 
-    final UserRegisterDsGateway userDsGateway;
-    final UserPresenter userPresenter;
-    final UserFactory userFactory;
+    private final UserRegisterDsOutput userDsGateway;
+    private final UserPresenter userPresenter;
+    private final UserFactory userFactory;
 
     @Override
     public UserResponseModel register(UserRequestModel requestModel) {

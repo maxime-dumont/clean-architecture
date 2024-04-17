@@ -1,9 +1,8 @@
-package org.example.interactors.usecase.user.register.api.input;
+package org.example.interactors.usecase.user.register.api.ports.input;
 
-import org.example.interactors.usecase.UseCase;
 import org.example.interactors.usecase.user.register.api.request.model.UserRequestModel;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 
-public interface UserRegisterInputBoundary extends UseCase {
+public interface UserRegisterInput {
     UserResponseModel register(UserRequestModel requestModel);
 }

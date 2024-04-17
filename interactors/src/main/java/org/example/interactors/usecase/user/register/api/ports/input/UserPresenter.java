@@ -1,4 +1,4 @@
-package org.example.interactors.usecase.user.register.api.input;
+package org.example.interactors.usecase.user.register.api.ports.input;
 
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 

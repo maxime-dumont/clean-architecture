@@ -2,12 +2,14 @@ package org.example.adapters.database;
 
 import lombok.RequiredArgsConstructor;
 import org.example.adapters.database.dbo.UserDbo;
-import org.example.interactors.usecase.user.register.api.ports.data.model.UserDsRequestModel;
-import org.example.interactors.usecase.user.register.api.ports.data.UserRegisterDsGateway;
+import org.example.interactors.common.PersistanceAdapter;
+import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserDsRequestModel;
+import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserRegisterDsOutput;
 import org.example.adapters.database.repository.JpaUserRepository;
 
+@PersistanceAdapter
 @RequiredArgsConstructor
-public class JpaUser implements UserRegisterDsGateway {
+class JpaUserRegisterService implements UserRegisterDsOutput {
 
     final JpaUserRepository repository;
 

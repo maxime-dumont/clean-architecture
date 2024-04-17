@@ -1,6 +1,7 @@
-package org.example.adapters.database.adapters.presenters;
+package org.example.adapters.rest.presenters;
 
-import org.example.interactors.usecase.user.register.api.input.UserPresenter;
+import org.example.interactors.common.ResponsePresenter;
+import org.example.interactors.usecase.user.register.api.ports.input.UserPresenter;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
@@ -8,7 +9,8 @@ import org.springframework.web.server.ResponseStatusException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class UserResponseFormatter implements UserPresenter {
+@ResponsePresenter
+class UserResponseFormatter implements UserPresenter {
 
     @Override
     public UserResponseModel prepareSuccessView(UserResponseModel response) {
