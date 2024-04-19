@@ -2,7 +2,7 @@ package org.example.adapters.database;
 
 import lombok.RequiredArgsConstructor;
 import org.example.adapters.database.dbo.UserDbo;
-import org.example.interactors.common.PersistanceAdapter;
+import org.example.archi.utils.annotation.PersistanceAdapter;
 import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserDsRequestModel;
 import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserRegisterDsOutput;
 import org.example.adapters.database.repository.JpaUserRepository;

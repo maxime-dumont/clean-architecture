@@ -3,6 +3,7 @@ module springBootApplication {
 	requires restAdapter;
 	requires sha256Adapter;
 	requires interactors;
+	requires archiUtils;
 
 	requires static lombok;
 	requires spring.boot;

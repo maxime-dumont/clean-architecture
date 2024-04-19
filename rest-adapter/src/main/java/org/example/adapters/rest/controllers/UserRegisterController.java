@@ -2,7 +2,7 @@ package org.example.adapters.rest.controllers;
 
 import lombok.RequiredArgsConstructor;
 
-import org.example.interactors.common.WebAdapter;
+import org.example.archi.utils.annotation.InputAdapter;
 import org.example.interactors.usecase.user.register.api.ports.input.UserRegisterInput;
 import org.example.interactors.usecase.user.register.api.request.model.UserRequestModel;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@WebAdapter
+@InputAdapter
 @RestController
 class UserRegisterController {
 

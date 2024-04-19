@@ -1,4 +1,7 @@
 module entities {
 	requires static lombok;
-	exports org.example.domain.entities to interactors;
+    requires archiUtils;
+    exports org.example.domain.entities to interactors;
+
+    opens org.example.domain.entities;
 }

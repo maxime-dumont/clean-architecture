@@ -3,7 +3,11 @@ module databaseAdapter {
 	requires static lombok;
 	requires spring.context;
 	requires spring.data.jpa;
+	requires org.hibernate.orm.core;
 
+	requires archiUtils;
 	requires interactors;
 
+	opens org.example.adapters.database.dbo;
+	opens org.example.adapters.database;
 }

@@ -1,6 +1,5 @@
 package org.example.adapters.rest.presenters;
-
-import org.example.interactors.common.ResponsePresenter;
+import org.example.archi.utils.annotation.ResponsePresenter;
 import org.example.interactors.usecase.user.register.api.ports.input.UserPresenter;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
 import org.springframework.http.HttpStatus;

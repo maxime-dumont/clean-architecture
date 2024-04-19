@@ -13,6 +13,7 @@
         <module>database-adapter</module>
         <module>sha256-adapter</module>
         <module>framework</module>
+        <module>archi-utils</module>
     </modules>
 
     <parent>

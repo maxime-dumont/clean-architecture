@@ -1,13 +1,9 @@
 package org.example;
 
-import org.example.interactors.common.PersistanceAdapter;
-import org.example.interactors.common.ResponsePresenter;
-import org.example.interactors.common.UseCase;
-import org.example.interactors.common.WebAdapter;
+
+import org.example.archi.utils.annotation.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 
@@ -19,9 +15,11 @@ import lombok.RequiredArgsConstructor;
 		type = FilterType.ANNOTATION,
 		classes = {
 				UseCase.class,
-				WebAdapter.class,
+				InputAdapter.class,
+				OutputAdapter.class,
 				PersistanceAdapter.class,
-				ResponsePresenter.class
+				ResponsePresenter.class,
+				Factory.class,
 		}))
 public class CleanArchitectureApplication
 //		extends SpringBootServletInitializer

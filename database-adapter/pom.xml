@@ -30,6 +30,12 @@
 		    <groupId>jakarta.persistence</groupId>
 		    <artifactId>jakarta.persistence-api</artifactId>
 	    </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>archi-utils</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

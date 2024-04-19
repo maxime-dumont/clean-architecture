@@ -1,9 +1,10 @@
 package org.example.interactors.usecase.user.register;
 
 import lombok.AllArgsConstructor;
+import org.example.archi.utils.annotation.UseCase;
 import org.example.domain.entities.User;
 import org.example.domain.entities.UserFactory;
-import org.example.interactors.common.UseCase;
+import org.example.interactors.usecase.user.register.api.ports.output.encoder.PasswordEncoderOutput;
 import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserDsRequestModel;
 import org.example.interactors.usecase.user.register.api.ports.input.UserPresenter;
 import org.example.interactors.usecase.user.register.api.ports.input.UserRegisterInput;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 class UserRegisterUsecase implements UserRegisterInput {
 
     private final UserRegisterDsOutput userDsGateway;
+    private final PasswordEncoderOutput passwordEncoderOutput;
     private final UserPresenter userPresenter;
     private final UserFactory userFactory;
 
@@ -31,7 +33,7 @@ class UserRegisterUsecase implements UserRegisterInput {
             return userPresenter.prepareFailView("User password must have more than 5 characters.");
         }
         LocalDateTime now = LocalDateTime.now();
-        UserDsRequestModel userDsModel = new UserDsRequestModel(user.getLogin(), user.getPassword(), now);
+        UserDsRequestModel userDsModel = new UserDsRequestModel(user.getLogin(), passwordEncoderOutput.encode(user.getPassword()), now);
 
         userDsGateway.save(userDsModel);
 

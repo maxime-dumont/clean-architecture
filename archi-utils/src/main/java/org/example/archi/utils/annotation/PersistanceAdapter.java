@@ -1,4 +1,4 @@
-package org.example.interactors.common;
+package org.example.archi.utils.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,4 +9,4 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface ResponsePresenter {}
+public @interface PersistanceAdapter {}
