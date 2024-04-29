@@ -8,10 +8,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class CommonUser implements User {
+	private static final int MIN_PASSWORD_LENGTH = 5;
 
     String login;
     String password;
     public boolean passwordIsValid() {
-        return password != null && password.length() > 5;
+        return password != null && password.length() > MIN_PASSWORD_LENGTH;
     }
 }

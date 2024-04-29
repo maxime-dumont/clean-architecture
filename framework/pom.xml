@@ -27,6 +27,11 @@
 		    <artifactId>database-adapter</artifactId>
 		    <version>1.0.0-SNAPSHOT</version>
 	    </dependency>
+	    <dependency>
+		    <groupId>org.example</groupId>
+		    <artifactId>archi-utils</artifactId>
+		    <version>1.0.0-SNAPSHOT</version>
+	    </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

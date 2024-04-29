@@ -7,6 +7,7 @@ module databaseAdapter {
 
 	requires archiUtils;
 	requires interactors;
+	requires org.mapstruct;
 
 	opens org.example.adapters.database.dbo;
 	opens org.example.adapters.database;

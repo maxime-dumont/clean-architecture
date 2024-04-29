@@ -3,15 +3,17 @@ package org.example.adapters.database;
 import lombok.RequiredArgsConstructor;
 import org.example.adapters.database.dbo.UserDbo;
 import org.example.archi.utils.annotation.PersistanceAdapter;
-import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserDsRequestModel;
-import org.example.interactors.usecase.user.register.api.ports.output.persistance.UserRegisterDsOutput;
+import org.example.interactors.usecase.user.register.api.ports.output.datastore.UserDsRequestModel;
+import org.example.interactors.usecase.user.register.api.ports.output.datastore.UserDsResponseModel;
+import org.example.interactors.usecase.user.register.api.ports.output.datastore.UserRegisterDsOutput;
 import org.example.adapters.database.repository.JpaUserRepository;
 
 @PersistanceAdapter
 @RequiredArgsConstructor
 class JpaUserRegisterService implements UserRegisterDsOutput {
 
-    final JpaUserRepository repository;
+    private final JpaUserRepository repository;
+    private final UserDsResponseMapper userDsResponseMapper;
 
     @Override
     public boolean existsByName(String login) {
@@ -19,8 +21,9 @@ class JpaUserRegisterService implements UserRegisterDsOutput {
     }
 
     @Override
-    public void save(UserDsRequestModel requestModel) {
+    public UserDsResponseModel save(UserDsRequestModel requestModel) {
         UserDbo accountDataMapper = new UserDbo(requestModel.getLogin(), requestModel.getPassword(), requestModel.getCreationTime());
-        repository.save(accountDataMapper);
+	    UserDbo savedUser = repository.save(accountDataMapper);
+		return userDsResponseMapper.toDsResponseModel(savedUser);
     }
 }

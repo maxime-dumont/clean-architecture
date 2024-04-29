@@ -1,4 +1,4 @@
-package org.example.interactors.usecase.user.register.api.ports.output.persistance;
+package org.example.interactors.usecase.user.register.api.ports.output.datastore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

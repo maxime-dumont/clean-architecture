@@ -2,9 +2,10 @@ module interactors {
 	requires static lombok;
 	requires entities;
 	requires archiUtils;
+	requires org.mapstruct;
 
 	exports org.example.interactors.usecase.user.register.api.ports.input;
-	exports org.example.interactors.usecase.user.register.api.ports.output.persistance;
+	exports org.example.interactors.usecase.user.register.api.ports.output.datastore;
 	exports org.example.interactors.usecase.user.register.api.ports.output.encoder;
 	exports org.example.interactors.usecase.user.register.api.request.model;
 	exports org.example.interactors.usecase.user.register.api.response.model;

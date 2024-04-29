@@ -20,10 +20,17 @@ class UserRegisterController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserRegisterController.class);
 
     private final UserRegisterInput userInput;
+//    private final UserRegisterInput adminuserInput;
 
     @PostMapping("/user")
     UserResponseModel create(@RequestBody UserRequestModel requestModel) {
 		LOGGER.info("create : {}", requestModel);
 		return userInput.register(requestModel);
     }
+
+//	@PostMapping("/admin/user")
+//	UserResponseModel create(@RequestBody UserRequestModel requestModel) {
+//		LOGGER.info("create : {}", requestModel);
+//		return userInput.register(requestModel);
+//	}
 }
