@@ -11,6 +11,7 @@ module springBootApplication {
 	requires spring.core;
 	requires spring.context;
 	requires spring.beans;
+	requires org.mapstruct;
 
 	opens org.example;
 	opens org.example.configuration;

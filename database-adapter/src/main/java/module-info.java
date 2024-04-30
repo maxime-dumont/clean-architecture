@@ -11,4 +11,5 @@ module databaseAdapter {
 
 	opens org.example.adapters.database.dbo;
 	opens org.example.adapters.database;
+	exports org.example.adapters.database;
 }

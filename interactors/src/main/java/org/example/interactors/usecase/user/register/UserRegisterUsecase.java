@@ -1,6 +1,8 @@
 package org.example.interactors.usecase.user.register;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 import org.example.archi.utils.annotation.UseCase;
 import org.example.domain.entities.User;
 import org.example.domain.entities.UserFactory;
@@ -12,31 +14,27 @@ import org.example.interactors.usecase.user.register.api.ports.input.UserRegiste
 import org.example.interactors.usecase.user.register.api.ports.output.datastore.UserRegisterDsOutput;
 import org.example.interactors.usecase.user.register.api.request.model.UserRequestModel;
 import org.example.interactors.usecase.user.register.api.response.model.UserResponseModel;
-import org.example.interactors.usecase.user.register.mapper.datastore.UserDsMapper;
-import org.example.interactors.usecase.user.register.mapper.request.UserRequestMapper;
 import org.example.interactors.usecase.user.register.mapper.response.UserResponseMapper;
 
 import java.time.LocalDateTime;
 
 @UseCase
-@AllArgsConstructor
-class UserRegisterUsecase implements UserRegisterInput {
+@RequiredArgsConstructor
+public class UserRegisterUsecase implements UserRegisterInput {
 
-    private final UserRegisterDsOutput userDsGateway;
-    private final PasswordEncoderOutput passwordEncoderOutput;
-    private final UserPresenter userPresenter;
-    private final UserFactory userFactory;
-    private final UserRequestMapper userRequestMapper;
-    private final UserDsMapper userDsMapper;
-    private final UserResponseMapper userResponseMapper;
+private final UserRegisterDsOutput userDsGateway;
+private final PasswordEncoderOutput passwordEncoderOutput;
+private final UserPresenter userPresenter;
+private final UserFactory userFactory;
+private final UserResponseMapper userResponseMapper;
 
-    @Override
-    public UserResponseModel register(UserRequestModel requestModel) {
+@Override
+public UserResponseModel register(UserRequestModel requestModel) {
 
-//		User user = userRequestMapper.toDomain(requestModel);
+	//		User user = userRequestMapper.toDomain(requestModel);
 
-        if (userDsGateway.existsByName(requestModel.getLogin())) {
-            return userPresenter.prepareFailView("User already exists.");
+	if (userDsGateway.existsByName(requestModel.getLogin())) {
+		return userPresenter.prepareFailView("User already exists.");
         }
 //		UserDsRequestModel userDsRequestModel = userDsMapper.toDsRequestModel(user);
         User user = userFactory.create(requestModel.getLogin(), requestModel.getPassword());
