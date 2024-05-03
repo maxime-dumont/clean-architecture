@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CommonUser implements User {
+class CommonUser implements User {
 	private static final int MIN_PASSWORD_LENGTH = 5;
 
     String login;

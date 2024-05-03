@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class AdminUser implements User {
+class AdminUser implements User {
 	private static final int MIN_PASSWORD_LENGTH = 12;
 	private static final Pattern pattern = Pattern.compile("[^A-Za-z0-9 ]");
 
